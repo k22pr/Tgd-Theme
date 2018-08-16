@@ -13,6 +13,8 @@ SASS로 제작되었습니다.
 #### 경량화(minify)버젼 [파일보기](https://github.com/k22pr/Tgd-Theme-kumikomii/blob/master/css/index.min.css)
 최소화된 버젼 입니다.
 
+#### 원본보기(SCSS)  [파일보기](https://github.com/k22pr/Tgd-Theme-kumikomii/blob/master/sass/index.scss)
+
 ---
 
 ### 미리보기
