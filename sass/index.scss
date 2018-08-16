@@ -1,0 +1,445 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+html {
+ // background: #FFD2C5;
+ background: linear-gradient(to bottom, #FFD2C5, #FFDCD2);
+  transition : .3s ease 1s;
+  height: auto !important;
+}
+body {
+  letter-spacing: -0.05em !important;
+  background: transparent;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+button, a.btn{transition:.2s ease 0s}
+
+/* 전체 쉐도우 */
+/*
+header #header-bar>.row,
+#main .menu-wrapper,
+#main #main-content>div.frame {
+  box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.2);
+}
+*/
+header #header-bar>.row, #main .menu-wrapper, #main #main-content>div.frame{
+  box-shadow:0px 0px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* 로고밑 NAV bar */
+
+header #header-bar>.row {
+  border: 0px;
+  border-radius:5px;
+  border-top-right-radius:15px;
+  border-bottom-left-radius:15px;
+  padding:6px;
+  button{
+    color:#FFDCD2;
+  }
+}
+
+/* 헤더 배너 */
+header .row>div:nth-child(1)>a {
+  display: block;
+  width: 145px;
+  height: 50px;
+  background: url(https://upload.tgd.kr/20180816/68489f5aaaf3ec668ae99960e0b99edb.png) no-repeat;
+  background-size: auto 50px;
+}
+
+header .row>div:nth-child(1)>a>img {
+  display: none;
+	
+	filter: grayscale(100%);
+  opacity: 0.8;
+}
+
+/* 검색폼 보더 */
+header #right-search-form>input[type='text'] {
+  color : #FF8978;
+  border: 1px solid #FF8978;
+  border-top-right-radius : 10px;
+  border-bottom-left-radius : 10px;
+  padding-left:15px
+}
+
+/* 트게더 전체메뉴 / 유용한링크 / 트위치 스케쥴 */
+#main .menu-wrapper{
+  border-bottom-left-radius: 15px;
+  >.header {
+    border-top-right-radius: 15px;
+    background: #FF8978;
+  }
+  a:nth-last-child(1){
+    border-bottom-left-radius: 15px;
+  }
+  div.spacer{
+    background:#fff;
+    border-top:2px dashed #FFDCD2;
+    height:0px;
+  }
+  a.shortcut-link, a.useful-links, a.game{transition:.15s ease 0s}
+  a.shortcut-link:hover, a.useful-links:hover, a.game:hover{background:#f5f5f5;}
+}
+
+#main #main-content{
+  >div.frame{
+    background:none;
+    
+    div#article-info{
+      border-top-right-radius: 20px;
+      background:#fafafa;
+      padding:20px 10px 10px 10px;
+      margin-top:10px;
+      .article-profile-img{top:20px;left:20px;width:50px;height:50px;border-radius:50%;}
+      h2, #article-info-writer{padding-left:80px;}
+    }
+    div#article-content-wrapper{
+      padding:0px;
+      background:#fff;
+      border-bottom-left-radius: 20px;
+      div.header{
+        background:none;color:#999;
+        border-top:2px dashed #eee;
+      }
+      div#article-content{
+        padding:20px 10px;
+      }
+      div.footer{
+        background:#fafafa;
+        padding:10px 15px;
+        border-top:2px dashed #eee;
+        border-bottom-left-radius:20px;
+      }
+    }
+    div#article-reply-area{
+      border-top-right-radius: 20px;
+      margin-top:10px;
+      padding-bottom:10px;
+      background:#fff;
+      .btn-primary{border:0;padding:7px 12px;font-size:15px;}
+      #reply-real-area{ 
+        background:#f5f5f5;padding:10px 10px;
+        .reply{
+          background:#fff;border:1px solid #e5e5e5;
+          border-radius:25px;border-bottom-left-radius: 0px;
+          div.reply-header{
+            .reply-writer.logged{color:#FF8978}
+            background:none;padding:10px 20px 5px 10px;
+            border-bottom:2px dashed #f5f5f5;
+          }
+          div.reply-content{
+            background:none;
+            padding:10px 10px 20px 15px;
+          } 
+        }
+      }
+    }
+    div#article-reply-area ~ div{
+      background:#fff;
+      border-bottom-left-radius: 20px;
+      margin-bottom:20px;
+      div div{
+        margin:0px !important;border-top:0px !important;
+      }
+    }
+
+
+  }
+}
+
+//메인 콘텐츠 상단의 프로필 이미지와 이름이 적혀있는 부분
+div#board-info{
+  height:auto;margin-bottom:10px;
+  background:#fff;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  //이미지가 왼쪽에 오도록 변경
+  > img, >h1, >#board-info-bottom{float:left !important;}
+  > img#board-info-profile-img{
+    animation : ProfileImageRotate 1s ease 1s;
+    animation-fill-mode: both;
+    transform:rotate(15deg);
+    width:90px;
+    margin-right:20px;
+    border-radius:50%;
+    border:2px dashed rgba(252,177,154,.7);
+  }
+  >h1{
+    width:calc(100% - 110px);
+    >a{
+      font-size:30px;
+      transition:.2s ease 0s;
+    }
+    >a:hover{
+      color:#FF8978;
+    }
+  }
+  >#board-info-bottom{
+    margin-top:10px;
+    width:calc(100% - 110px);
+    color:#FF8978;
+  }
+}
+div#article-list{
+  background:#fff;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding:0px;
+  div#article-list-category{
+    border:none;padding:5px;background:none;
+  }
+  div.article-list-row{
+    width:calc(100% - 10px);border:0px none;
+    background:#fdfdfd;
+    margin:4px 5px 0px 5px;
+    border-radius:15px;
+    border:1px solid #eee;
+    transition: .15s ease 0s;
+    div.item div.list-header{
+      border:none;
+    }
+    .v0 span{
+      background:#ccc !important;
+    }
+
+    >div.item>.list-title{
+      border-bottom:0px;
+      > a:visited{
+        color:#999 !important;
+      }
+    }
+    >div.item>.list-time{
+      border-bottom:0px;
+    }
+
+  }
+  div.article-list-row:hover{
+    background:rgba(253,237,179,.33);
+  }
+  div.article-list-row.notice{
+    //border-top-left-radius:0px;
+    //border-bottom-left-radius:0px;
+    //border:1px dashed rgba(0,0,0,.5);
+    border:1px solid rgba(247,75,72,.1);
+    background:rgba(247,75,72,.05);
+    //border:1px solid rgba(247,75,72,.5);
+  }
+  div.article-list-row.notice:hover{
+    background:rgba(247,75,72,.1);
+  }  
+
+  //하단매뉴
+  #article-list-menu{
+    >.btn.best{
+      border-radius:15px;
+      background:#fcb19a;color:#fff;
+    }
+    >.btn.write{
+      border-radius:15px;
+      background:#FF8978;color:#fff;
+    }
+    .pagination > li > a{
+      color:#FF8978;
+      border-radius:50%;
+      margin-left:5px;
+    }
+    .pagination > li > a:hover{
+      transition:.3s ease 0s;
+      background:#fafafa;
+    }
+    .pagination > li.active > a{
+      color:#fff;font-weight:bold;
+    }
+  }
+  
+  form.input-group{
+    input[type=text]{
+      padding:6px;height:34px !important;
+      border:1px solid #ccc;border-left:0px;border-right:0px;
+    }
+    .input-group-btn{
+      button{border:1px solid #ccc}
+      button:hover{transition:.3s ease 0s}
+      button.btn.square.btn-default.dropdown-toggle{
+        padding-left:15px;padding-right:10px;
+        border-top-left-radius: 17px;
+        border-bottom-left-radius: 17px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+      button.btn.square.btn-default{
+        padding-left:10px;padding-right:15px;
+        border-top-right-radius: 17px;
+        border-bottom-right-radius: 17px;
+      }
+    }
+  }
+}
+.btn.square{
+  font-size:14px; 
+  
+}
+
+.fa-navicon:before,
+.fa-reorder:before,
+.fa-bars:before {
+  color: white;
+}
+
+.fa-square:before {
+  color: #FFCD69;
+}
+
+header #header-bar>.row,
+#main .menu-wrapper,
+#main #main-content>div.frame {
+  border-right: none;
+  border-bottom: none;
+}
+
+#main .menu-wrapper {
+  border: none;
+}
+
+/* 헤더 검색 버튼 */
+header #right-search-form>#right-search-btn {
+  color: #FFD2C5;
+}
+
+/* 헤더 [광고]배경색 */
+header #header-bar #header-top-notice strong.notice-badge {
+  background: #FF8978;
+}
+
+/* fa색상 */
+header #header-bar .fa {
+  color: #FF8978;
+}
+
+/* 스트리머 게시판 상단 정보 글씨색상 */
+#board-info #board-info-bottom a {
+  color: #FF8978;
+}
+
+/* 좌측메뉴 숏컷링크 글씨 색상 */
+
+#main .menu-wrapper>a>em {
+  color: #FF8978;
+}
+
+/* 좌측메뉴 메뉴사이의 공간 색상 */
+
+#main .menu-wrapper .spacer {
+  background: #D1B6E1;
+  height: 0.15em;
+}
+
+/* 게시글 관련부분 */
+
+#article-list>.article-list-row>.item>.list-title>.list-writer>span {
+  width: 120px !important;
+}
+
+#article-list #article-list-category {
+  border-top: 2px solid #FF8978;
+  background: white;
+}
+
+#article-list #article-list-category>a {
+  background: white;
+}
+
+#article-list>.article-list-row>.item>.list-header>span {
+  background-color: #FF8978;
+}
+
+#article-list>.article-list-row>.item>.list-title>small.comment-count {
+  color: #FF8978;
+}
+
+#article-list>.article-list-row>.item>.list-title>.list-writer.logged>span {
+  color: #FF8978;
+}
+
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+  background-color: #FF8978;
+  border-color: #FFD2C5;
+}
+
+.pagination>li>a:focus,
+.pagination>li>a:hover,
+.pagination>li>span:focus,
+.pagination>li>span:hover {
+  color: #FFD2C5;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+  color: #FFD2C5;
+}
+
+#article-content-wrapper>.header {
+  border-top: 2px solid #FFD2C5;
+}
+
+#article-reply-area #reply-real-area .reply>.reply-header>.reply-writer.logged,
+#article-reply-area #reply-best-area .reply>.reply-header>.reply-writer.logged {
+  color: #FFD2C5;
+}
+
+#article-info>h2 {
+  font-weight: bold;
+}
+
+#article-info>h2>span.category {
+  color: #FF8978 !important;
+}
+
+#article-reply-area>.header h5 {
+  color: #FF8978;
+}
+
+#main .menu-wrapper>a {
+  padding: 0.5em 1.4em 0.5em 0.7em !important;
+}
+
+a {
+  color: #FF8978;
+}
+
+span.a-badge i.fa.fa-info-circle {
+  color: #FF8978;
+}
+
+/* footer */
+
+#article-list>.article-list-row {
+  border-right: none;
+}
+
+#article-list #article-list-menu {
+  box-sizing: border-box;
+  width: unset;
+  margin: 20px;
+}
+
+#article-list #boardSearchForm {
+  padding-bottom: 20px;
+  height: unset;
+}
+
+.btn-primary {
+  background: #FF8978 !important;
+}
+
+@keyframes ProfileImageRotate{
+  0%{transform:rotate(15deg)}
+  70%{transform:rotate(-5deg)}
+  100%{transform:rotate(0deg)}
+}
