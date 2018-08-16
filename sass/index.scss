@@ -1,7 +1,9 @@
+@import "variable.scss";
+
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 html {
- // background: #FFD2C5;
- background: linear-gradient(to bottom, #FFD2C5, #FFDCD2);
+ // background: $color-main;
+ background: linear-gradient(to bottom, $color-main, #FFDCD2);
   transition : .3s ease 1s;
   height: auto !important;
 }
@@ -11,6 +13,7 @@ body {
   font-family: 'Nanum Gothic', sans-serif;
 }
 
+//버튼에 마우스를 올렸을시 색상을 0.2초 동안 천천히 변하게 합니다.
 button, a.btn{transition:.2s ease 0s}
 
 /* 전체 쉐도우 */
@@ -21,6 +24,306 @@ header #header-bar>.row,
   box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.2);
 }
 */
+//상단의 오른쪽의 검색 창
+header #right-search-form>input[type='text'] {
+  color : $color-main-deep;
+  border: 1px solid $color-main-deep;
+  border-top-right-radius : 10px;
+  border-bottom-left-radius : 10px;
+  padding-left:15px
+}
+
+//왼쪽의 매뉴 부분
+#main .menu-wrapper{
+  border-bottom-left-radius: 15px;
+  //각 매뉴들의 제목 부분
+  >.header {
+    border-top-right-radius: 15px;
+    background: $color-main-deep;
+  }
+  //매뉴의 마지막 1개의 왼쪽아래 끝을 둥글게
+  a:nth-last-child(1){
+    border-bottom-left-radius: 15px;
+  }
+  //각 매뉴별 구별선
+  div.spacer{
+    background:#fff;
+    border-top:2px dashed #FFDCD2;
+    height:0px;
+  }
+  //마우스를 올렸을때 색상이 0.15초 동안 천천히 변하게 
+  a.shortcut-link, a.useful-links, a.game{transition:.15s ease 0s}
+  //매뉴에 마우스를 올렸을때 변하는 색상
+  a.shortcut-link:hover, a.useful-links:hover, a.game:hover{background:#f5f5f5;}
+}
+
+// 메인 콘텐츠 전체 부분
+#main #main-content{
+  >div.frame{
+    background:none;
+    
+    //게시글의 제목줄
+    div#article-info{
+      border-top-right-radius: 20px;
+      background:#fafafa;
+      padding:20px 10px 10px 10px;
+      margin-top:10px;
+      //작성자의 프로필 이미지
+      .article-profile-img{top:20px;left:20px;width:50px;height:50px;border-radius:50%;}
+      //게시글 제목
+      //(이미지가 왼쪽에 오기 때문에 padding-left를 이미지크기+여백 값만큼 줘야합니다.)
+      h2, #article-info-writer{padding-left:80px;}
+    }
+
+    //실제 게시글 콘텐츠가 시작되는 부분
+    div#article-content-wrapper{
+      padding:0px;
+      background:#fff;
+      border-bottom-left-radius: 20px;
+      //게시글 상단의 작성시간등
+      div.header{
+        background:none;color:#999;
+        border-top:2px dashed #eee;
+      }
+      //게시글의 실제 내용
+      div#article-content{
+        padding:20px 10px;
+      }
+      //게시글 하단의 버튼들
+      div.footer{
+        background:#fafafa;
+        padding:10px 15px;
+        border-top:2px dashed #eee;
+        border-bottom-left-radius:20px;
+      }
+    }
+    //게시글의 댓글 부분
+    div#article-reply-area{
+      border-top-right-radius: 20px;
+      margin-top:10px;
+      padding-bottom:10px;
+      background:#fff;
+      //댓글 작성 버튼
+      .btn-primary{border:0;padding:7px 12px;font-size:15px;}
+      //실제 달린 댓글들
+      #reply-real-area{ 
+        background:#f5f5f5;padding:10px 10px;
+        .reply{
+          background:#fff;border:1px solid #e5e5e5;
+          border-radius:25px;border-bottom-left-radius: 0px;
+          //댓글 상단의 프로필 이미지와 작성자 닉네임 부분
+          div.reply-header{
+            .reply-writer.logged{color:$color-main-deep}
+            background:none;padding:10px 20px 5px 10px;
+            border-bottom:2px dashed #f5f5f5;
+          }
+          //댓글의 내용이 적혀있는 부분
+          div.reply-content{
+            background:none;
+            padding:10px 10px 20px 15px;
+          } 
+        }
+      }
+    }
+    //댓글 부분 아래오는 광고
+    div#article-reply-area ~ div{
+      background:#fff;
+      border-bottom-left-radius: 20px;
+      margin-bottom:20px;
+      div div{
+        margin:0px !important;border-top:0px !important;
+      }
+    }
+
+  }
+}
+
+//메인 콘텐츠 상단의 프로필 이미지와 이름이 적혀있는 부분
+div#board-info{
+  height:auto;margin-bottom:10px;
+  background:#fff;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  //이미지가 왼쪽에 오도록 변경
+  > img, >h1, >#board-info-bottom{float:left !important;}
+  //프로필 이미지
+  > img#board-info-profile-img{
+    animation : ProfileImageRotate 1s ease 1s;
+    animation-fill-mode: both;
+    transform:rotate(15deg);
+    width:90px;
+    margin-right:20px;
+    border-radius:50%;
+    border:2px dashed rgba(252,177,154,.7);
+  }
+  //윗줄
+  >h1{
+    width:calc(100% - 110px);
+    >a{
+      font-size:30px;
+      transition:.2s ease 0s;
+    }
+    >a:hover{
+      color:$color-main-deep;
+    }
+  }
+  //아랫줄
+  >#board-info-bottom{
+    margin-top:10px;
+    width:calc(100% - 110px);
+    color:$color-main-deep;
+  }
+}
+
+
+//게시글 목록
+div#article-list{
+  background:#fff;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding:0px;
+  //게시글 목록 상단의 카테고리
+  div#article-list-category{
+    border:none;padding:5px;background:none;
+  }
+
+  //게시글 목록의 게시글
+  div.article-list-row{
+    width:calc(100% - 10px);border:0px none;
+    background:#fdfdfd;
+    margin:4px 5px 0px 5px;
+    border-radius:15px;
+    border:1px solid #eee;
+    transition: .15s ease 0s;
+    //머지이거
+    div.item div.list-header{
+      border:none;
+    }
+    //추천이 0개인 추천수
+    .v0 span{
+      background:#ccc !important;
+    }
+    //제목
+    >div.item>.list-title{
+      border-bottom:0px;
+      > a:visited{
+        color:#999 !important;
+      }
+    }
+    //시간
+    >div.item>.list-time{
+      border-bottom:0px;
+    }
+
+  }
+  //게시글 목록에 마우스를 올렸을때
+  div.article-list-row:hover{
+    background:rgba(253,237,179,.33);
+  }
+
+
+  //게시글 목록의 공지사항 
+  div.article-list-row.notice{
+    //border-top-left-radius:0px;
+    //border-bottom-left-radius:0px;
+    //border:1px dashed rgba(0,0,0,.5);
+    border:1px solid rgba(247,75,72,.1);
+    background:rgba(247,75,72,.05);
+    //border:1px solid rgba(247,75,72,.5);
+  }
+  //게시글 목록의 공지사항에 마우스를 올렸을때
+  div.article-list-row.notice:hover{
+    background:rgba(247,75,72,.1);
+  }  
+
+  //게시글 목록 하단매뉴
+  #article-list-menu{
+    //인기글 버튼입니다.
+    >.btn.best{
+      border-radius:15px;
+      background:#fcb19a;color:#fff;
+    }
+    //글 쓰기 버튼 입니다.
+    >.btn.write{
+      border-radius:15px;
+      background:$color-main-deep;color:#fff;
+    }
+    //중앙의 페이지 넘버 부분입니다.
+    .pagination > li > a{
+      color:$color-main-deep;
+      border-radius:50%;
+      margin-left:5px;
+    }
+    //페이지 넘버중 현재 페이지입니다.
+    .pagination > li > a:hover{
+      transition:.3s ease 0s;
+      background:#fafafa;
+    }
+    //그외의 페이지들
+    .pagination > li.active > a{
+      color:#fff;font-weight:bold;
+    }
+  }
+  
+  //하단의 검색박스 부분 입니다.
+  form.input-group{
+    //중앙의 검색어 입력부분
+    input[type=text]{
+      padding:6px;height:34px !important;
+      border:1px solid #ccc;border-left:0px;border-right:0px;
+    }
+      //오른쪽의 검색타입 버튼
+    .input-group-btn{
+      button{border:1px solid #ccc}
+      button:hover{transition:.3s ease 0s}
+      button.btn.square.btn-default.dropdown-toggle{
+        padding-left:15px;padding-right:10px;
+        border-top-left-radius: 17px;
+        border-bottom-left-radius: 17px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+      }
+      //왼쪽의 돋보기 버튼
+      button.btn.square.btn-default{
+        padding-left:10px;padding-right:15px;
+        border-top-right-radius: 17px;
+        border-bottom-right-radius: 17px;
+      }
+    }
+  }
+}
+
+
+
+
+//////////////////여기서부터 원본/////////////////
+.btn.square{
+  font-size:14px; 
+  
+}
+
+.fa-navicon:before,
+.fa-reorder:before,
+.fa-bars:before {
+  color: white;
+}
+
+.fa-square:before {
+  color: #FFCD69;
+}
+
+header #header-bar>.row,
+#main .menu-wrapper,
+#main #main-content>div.frame {
+  border-right: none;
+  border-bottom: none;
+}
+
+#main .menu-wrapper {
+  border: none;
+}
+
+
 header #header-bar>.row, #main .menu-wrapper, #main #main-content>div.frame{
   box-shadow:0px 0px 0px rgba(0, 0, 0, 0.2);
 }
@@ -54,278 +357,31 @@ header .row>div:nth-child(1)>a>img {
   opacity: 0.8;
 }
 
-/* 검색폼 보더 */
-header #right-search-form>input[type='text'] {
-  color : #FF8978;
-  border: 1px solid #FF8978;
-  border-top-right-radius : 10px;
-  border-bottom-left-radius : 10px;
-  padding-left:15px
-}
-
-/* 트게더 전체메뉴 / 유용한링크 / 트위치 스케쥴 */
-#main .menu-wrapper{
-  border-bottom-left-radius: 15px;
-  >.header {
-    border-top-right-radius: 15px;
-    background: #FF8978;
-  }
-  a:nth-last-child(1){
-    border-bottom-left-radius: 15px;
-  }
-  div.spacer{
-    background:#fff;
-    border-top:2px dashed #FFDCD2;
-    height:0px;
-  }
-  a.shortcut-link, a.useful-links, a.game{transition:.15s ease 0s}
-  a.shortcut-link:hover, a.useful-links:hover, a.game:hover{background:#f5f5f5;}
-}
-
-#main #main-content{
-  >div.frame{
-    background:none;
-    
-    div#article-info{
-      border-top-right-radius: 20px;
-      background:#fafafa;
-      padding:20px 10px 10px 10px;
-      margin-top:10px;
-      .article-profile-img{top:20px;left:20px;width:50px;height:50px;border-radius:50%;}
-      h2, #article-info-writer{padding-left:80px;}
-    }
-    div#article-content-wrapper{
-      padding:0px;
-      background:#fff;
-      border-bottom-left-radius: 20px;
-      div.header{
-        background:none;color:#999;
-        border-top:2px dashed #eee;
-      }
-      div#article-content{
-        padding:20px 10px;
-      }
-      div.footer{
-        background:#fafafa;
-        padding:10px 15px;
-        border-top:2px dashed #eee;
-        border-bottom-left-radius:20px;
-      }
-    }
-    div#article-reply-area{
-      border-top-right-radius: 20px;
-      margin-top:10px;
-      padding-bottom:10px;
-      background:#fff;
-      .btn-primary{border:0;padding:7px 12px;font-size:15px;}
-      #reply-real-area{ 
-        background:#f5f5f5;padding:10px 10px;
-        .reply{
-          background:#fff;border:1px solid #e5e5e5;
-          border-radius:25px;border-bottom-left-radius: 0px;
-          div.reply-header{
-            .reply-writer.logged{color:#FF8978}
-            background:none;padding:10px 20px 5px 10px;
-            border-bottom:2px dashed #f5f5f5;
-          }
-          div.reply-content{
-            background:none;
-            padding:10px 10px 20px 15px;
-          } 
-        }
-      }
-    }
-    div#article-reply-area ~ div{
-      background:#fff;
-      border-bottom-left-radius: 20px;
-      margin-bottom:20px;
-      div div{
-        margin:0px !important;border-top:0px !important;
-      }
-    }
-
-
-  }
-}
-
-//메인 콘텐츠 상단의 프로필 이미지와 이름이 적혀있는 부분
-div#board-info{
-  height:auto;margin-bottom:10px;
-  background:#fff;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  //이미지가 왼쪽에 오도록 변경
-  > img, >h1, >#board-info-bottom{float:left !important;}
-  > img#board-info-profile-img{
-    animation : ProfileImageRotate 1s ease 1s;
-    animation-fill-mode: both;
-    transform:rotate(15deg);
-    width:90px;
-    margin-right:20px;
-    border-radius:50%;
-    border:2px dashed rgba(252,177,154,.7);
-  }
-  >h1{
-    width:calc(100% - 110px);
-    >a{
-      font-size:30px;
-      transition:.2s ease 0s;
-    }
-    >a:hover{
-      color:#FF8978;
-    }
-  }
-  >#board-info-bottom{
-    margin-top:10px;
-    width:calc(100% - 110px);
-    color:#FF8978;
-  }
-}
-div#article-list{
-  background:#fff;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  padding:0px;
-  div#article-list-category{
-    border:none;padding:5px;background:none;
-  }
-  div.article-list-row{
-    width:calc(100% - 10px);border:0px none;
-    background:#fdfdfd;
-    margin:4px 5px 0px 5px;
-    border-radius:15px;
-    border:1px solid #eee;
-    transition: .15s ease 0s;
-    div.item div.list-header{
-      border:none;
-    }
-    .v0 span{
-      background:#ccc !important;
-    }
-
-    >div.item>.list-title{
-      border-bottom:0px;
-      > a:visited{
-        color:#999 !important;
-      }
-    }
-    >div.item>.list-time{
-      border-bottom:0px;
-    }
-
-  }
-  div.article-list-row:hover{
-    background:rgba(253,237,179,.33);
-  }
-  div.article-list-row.notice{
-    //border-top-left-radius:0px;
-    //border-bottom-left-radius:0px;
-    //border:1px dashed rgba(0,0,0,.5);
-    border:1px solid rgba(247,75,72,.1);
-    background:rgba(247,75,72,.05);
-    //border:1px solid rgba(247,75,72,.5);
-  }
-  div.article-list-row.notice:hover{
-    background:rgba(247,75,72,.1);
-  }  
-
-  //하단매뉴
-  #article-list-menu{
-    >.btn.best{
-      border-radius:15px;
-      background:#fcb19a;color:#fff;
-    }
-    >.btn.write{
-      border-radius:15px;
-      background:#FF8978;color:#fff;
-    }
-    .pagination > li > a{
-      color:#FF8978;
-      border-radius:50%;
-      margin-left:5px;
-    }
-    .pagination > li > a:hover{
-      transition:.3s ease 0s;
-      background:#fafafa;
-    }
-    .pagination > li.active > a{
-      color:#fff;font-weight:bold;
-    }
-  }
-  
-  form.input-group{
-    input[type=text]{
-      padding:6px;height:34px !important;
-      border:1px solid #ccc;border-left:0px;border-right:0px;
-    }
-    .input-group-btn{
-      button{border:1px solid #ccc}
-      button:hover{transition:.3s ease 0s}
-      button.btn.square.btn-default.dropdown-toggle{
-        padding-left:15px;padding-right:10px;
-        border-top-left-radius: 17px;
-        border-bottom-left-radius: 17px;
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px;
-      }
-      button.btn.square.btn-default{
-        padding-left:10px;padding-right:15px;
-        border-top-right-radius: 17px;
-        border-bottom-right-radius: 17px;
-      }
-    }
-  }
-}
-.btn.square{
-  font-size:14px; 
-  
-}
-
-.fa-navicon:before,
-.fa-reorder:before,
-.fa-bars:before {
-  color: white;
-}
-
-.fa-square:before {
-  color: #FFCD69;
-}
-
-header #header-bar>.row,
-#main .menu-wrapper,
-#main #main-content>div.frame {
-  border-right: none;
-  border-bottom: none;
-}
-
-#main .menu-wrapper {
-  border: none;
-}
 
 /* 헤더 검색 버튼 */
 header #right-search-form>#right-search-btn {
-  color: #FFD2C5;
+  color: $color-main;
 }
 
 /* 헤더 [광고]배경색 */
 header #header-bar #header-top-notice strong.notice-badge {
-  background: #FF8978;
+  background: $color-main-deep;
 }
 
 /* fa색상 */
 header #header-bar .fa {
-  color: #FF8978;
+  color: $color-main-deep;
 }
 
 /* 스트리머 게시판 상단 정보 글씨색상 */
 #board-info #board-info-bottom a {
-  color: #FF8978;
+  color: $color-main-deep;
 }
 
 /* 좌측메뉴 숏컷링크 글씨 색상 */
 
 #main .menu-wrapper>a>em {
-  color: #FF8978;
+  color: $color-main-deep;
 }
 
 /* 좌측메뉴 메뉴사이의 공간 색상 */
@@ -342,7 +398,7 @@ header #header-bar .fa {
 }
 
 #article-list #article-list-category {
-  border-top: 2px solid #FF8978;
+  border-top: 2px solid $color-main-deep;
   background: white;
 }
 
@@ -351,15 +407,15 @@ header #header-bar .fa {
 }
 
 #article-list>.article-list-row>.item>.list-header>span {
-  background-color: #FF8978;
+  background-color: $color-main-deep;
 }
 
 #article-list>.article-list-row>.item>.list-title>small.comment-count {
-  color: #FF8978;
+  color: $color-main-deep;
 }
 
 #article-list>.article-list-row>.item>.list-title>.list-writer.logged>span {
-  color: #FF8978;
+  color: $color-main-deep;
 }
 
 .pagination>.active>a,
@@ -368,29 +424,29 @@ header #header-bar .fa {
 .pagination>.active>span,
 .pagination>.active>span:focus,
 .pagination>.active>span:hover {
-  background-color: #FF8978;
-  border-color: #FFD2C5;
+  background-color: $color-main-deep;
+  border-color: $color-main;
 }
 
 .pagination>li>a:focus,
 .pagination>li>a:hover,
 .pagination>li>span:focus,
 .pagination>li>span:hover {
-  color: #FFD2C5;
+  color: $color-main;
 }
 
 .pagination>li>a,
 .pagination>li>span {
-  color: #FFD2C5;
+  color: $color-main;
 }
 
 #article-content-wrapper>.header {
-  border-top: 2px solid #FFD2C5;
+  border-top: 2px solid $color-main;
 }
 
 #article-reply-area #reply-real-area .reply>.reply-header>.reply-writer.logged,
 #article-reply-area #reply-best-area .reply>.reply-header>.reply-writer.logged {
-  color: #FFD2C5;
+  color: $color-main;
 }
 
 #article-info>h2 {
@@ -398,11 +454,11 @@ header #header-bar .fa {
 }
 
 #article-info>h2>span.category {
-  color: #FF8978 !important;
+  color: $color-main-deep !important;
 }
 
 #article-reply-area>.header h5 {
-  color: #FF8978;
+  color: $color-main-deep;
 }
 
 #main .menu-wrapper>a {
@@ -410,11 +466,11 @@ header #header-bar .fa {
 }
 
 a {
-  color: #FF8978;
+  color: $color-main-deep;
 }
 
 span.a-badge i.fa.fa-info-circle {
-  color: #FF8978;
+  color: $color-main-deep;
 }
 
 /* footer */
@@ -435,7 +491,7 @@ span.a-badge i.fa.fa-info-circle {
 }
 
 .btn-primary {
-  background: #FF8978 !important;
+  background: $color-main-deep !important;
 }
 
 @keyframes ProfileImageRotate{
