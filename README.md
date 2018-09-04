@@ -1,33 +1,15 @@
-# 고차비 트게더 테마
+<p align="center">
 
-SASS로 제작되었습니다.
+  # 트게터 CSS 커스텀 테마
 
-고차비님이 수정하신 색상등은 그대로 유지하고 잘 보이지 않던 글자들의 가독성을 높혔습니다.
+  SASS로 제작되었습니다.
 
+  [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-## PC버젼
+</p>
 
-#### 일반 버젼 [파일보기](https://github.com/k22pr/Tgd-Theme-kumikomii/blob/master/css/index.css)
+## [고차비님 테마](https://github.com/k22pr/Tgd-Theme)
 
-#### 원본보기(SCSS)  [파일보기](https://github.com/k22pr/Tgd-Theme-kumikomii/blob/master/sass/index.scss)
+고차비님이 기존에 제작하신 테마의 색상에 맞춰 수정해 보았습니다.
 
----
-
-### 미리보기
-![예제1](./image/ex01.png)
-![예제2](./image/ex02.png)
-
----
-
-## 모바일
-
-#### 일반 버젼 [파일보기](https://github.com/k22pr/Tgd-Theme-kumikomii/blob/master/css/mobile.css)
-
-#### 원본보기(SCSS)  [파일보기](https://github.com/k22pr/Tgd-Theme-kumikomii/blob/master/sass/mobile.scss)
-
-
----
-
-### 미리보기
-![예제1](./image/mex01.png)
-![예제1](./image/mex02.png)
+border-radius를 통해 약간 고구마 스러운 디자인으로 제작했습니다.
