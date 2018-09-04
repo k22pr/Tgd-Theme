@@ -7,9 +7,9 @@ SASS로 제작되었습니다.
 
 ## PC버젼
 
-#### 일반 버젼 [파일보기](https://github.com/k22pr/Tgd-Theme-kumikomii/blob/master/css/index.css)
+#### 일반 버젼 [파일보기](./css/index.css)
 
-#### 원본보기(SCSS)  [파일보기](https://github.com/k22pr/Tgd-Theme-kumikomii/blob/master/sass/index.scss)
+#### 원본보기(SCSS)  [파일보기](https://github.com/k22pr/Tgd-Theme-kumikomii/blob/master/theme/kumikomii/css/index.css)
 
 ---
 
@@ -21,9 +21,9 @@ SASS로 제작되었습니다.
 
 ## 모바일
 
-#### 일반 버젼 [파일보기](https://github.com/k22pr/Tgd-Theme-kumikomii/blob/master/css/mobile.css)
+#### 일반 버젼 [파일보기](https://github.com/k22pr/Tgd-Theme-kumikomii/blob/master/theme/kumikomii/css/index.css)
 
-#### 원본보기(SCSS)  [파일보기](https://github.com/k22pr/Tgd-Theme-kumikomii/blob/master/sass/mobile.scss)
+#### 원본보기(SCSS)  [파일보기](https://github.com/k22pr/Tgd-Theme-kumikomii/blob/master/theme/kumikomii/css/index.css)
 
 
 ---
