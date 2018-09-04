@@ -8,7 +8,9 @@
 
 </p>
 
-## [고차비님 테마](https://github.com/k22pr/Tgd-Theme)
+---
+
+## [고차비님 테마](https://github.com/k22pr/Tgd-Theme/tree/master/theme/kumikomii)
 
 고차비님이 기존에 제작하신 테마의 색상에 맞춰 수정해 보았습니다.
 
