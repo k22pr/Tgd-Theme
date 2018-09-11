@@ -1,10 +1,13 @@
 <p align="center">
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 # 트게터 CSS 커스텀 테마
 
 SASS 로 제작되었습니다.
 
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+코드내용을 복사해서 붙혀 넣으시면 됩니다.
 
 </p>
 

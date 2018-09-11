@@ -6,7 +6,7 @@ SASS 로 제작되었습니다.
 
 ## PC 버젼
 
-#### CSS 버젼 [파일보기](./styles/index.min.css)
+#### CSS 버젼(minify) [파일보기](./styles/index.min.css)
 
 #### 원본보기(SCSS) [파일보기](./styles/index.scss)
 
@@ -21,7 +21,7 @@ SASS 로 제작되었습니다.
 
 ## 모바일
 
-#### CSS 버젼 [파일보기](./styles/mobile.min.css)
+#### CSS 버젼(minify) [파일보기](./styles/mobile.min.css)
 
 #### 원본보기(SCSS) [파일보기](./styles/mobile.scss)
 
