@@ -35,6 +35,15 @@ header #header-bar>.row,
 //상단의 오른쪽의 검색 창
 header {
   padding-bottom: 0px;
+  .row > div:nth-child(1) > a {
+    background: url(https://upload.tgd.kr/20180911/717561690381d66be6c0704caa9863bb.png)
+      no-repeat;
+    display: block;
+    height: 50px;
+    img {
+      display: none;
+    }
+  }
   #right-search-form {
     #right-search-btn {
       color: $color-main;
@@ -65,7 +74,7 @@ header {
       background: $color-main-deep;
     }
     .fa {
-      color: $color-main-deep;
+      color: #fff;
     }
   }
 }

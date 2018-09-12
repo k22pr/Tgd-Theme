@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* make by k22pr*/
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 html {
@@ -101,7 +100,11 @@ header #right-search-form > input[type="text"] {
   border-top: 2px dashed #eee;
 }
 
-#main #main-content > div.frame div#article-content-wrapper div#article-content {
+#main
+  #main-content
+  > div.frame
+  div#article-content-wrapper
+  div#article-content {
   padding: 20px 10px;
 }
 
@@ -137,17 +140,36 @@ header #right-search-form > input[type="text"] {
   border-bottom-left-radius: 0px;
 }
 
-#main #main-content > div.frame div#article-reply-area #reply-real-area .reply div.reply-header {
+#main
+  #main-content
+  > div.frame
+  div#article-reply-area
+  #reply-real-area
+  .reply
+  div.reply-header {
   background: none;
   padding: 10px 20px 5px 10px;
   border-bottom: 2px dashed #f5f5f5;
 }
 
-#main #main-content > div.frame div#article-reply-area #reply-real-area .reply div.reply-header .reply-writer.logged {
+#main
+  #main-content
+  > div.frame
+  div#article-reply-area
+  #reply-real-area
+  .reply
+  div.reply-header
+  .reply-writer.logged {
   color: #ff8978;
 }
 
-#main #main-content > div.frame div#article-reply-area #reply-real-area .reply div.reply-content {
+#main
+  #main-content
+  > div.frame
+  div#article-reply-area
+  #reply-real-area
+  .reply
+  div.reply-content {
   background: none;
   padding: 10px 10px 20px 15px;
 }
@@ -306,7 +328,10 @@ div#article-list form.input-group .input-group-btn button:hover {
   transition: 0.3s ease 0s;
 }
 
-div#article-list form.input-group .input-group-btn button.btn.square.btn-default.dropdown-toggle {
+div#article-list
+  form.input-group
+  .input-group-btn
+  button.btn.square.btn-default.dropdown-toggle {
   padding-left: 15px;
   padding-right: 10px;
   border-top-left-radius: 17px;
@@ -315,7 +340,10 @@ div#article-list form.input-group .input-group-btn button.btn.square.btn-default
   border-bottom-right-radius: 0px;
 }
 
-div#article-list form.input-group .input-group-btn button.btn.square.btn-default {
+div#article-list
+  form.input-group
+  .input-group-btn
+  button.btn.square.btn-default {
   padding-left: 10px;
   padding-right: 15px;
   border-top-right-radius: 17px;
@@ -371,7 +399,8 @@ header .row > div:nth-child(1) > a {
   display: block;
   width: 145px;
   height: 50px;
-  background: url(https://upload.tgd.kr/20180816/68489f5aaaf3ec668ae99960e0b99edb.png) no-repeat;
+  background: url(https://upload.tgd.kr/20180816/68489f5aaaf3ec668ae99960e0b99edb.png)
+    no-repeat;
   background-size: auto 50px;
 }
 
@@ -435,11 +464,11 @@ header #header-bar .fa {
 }
 
 #article-list
-> .article-list-row
-> .item
-> .list-title
-> .list-writer.logged
-> span {
+  > .article-list-row
+  > .item
+  > .list-title
+  > .list-writer.logged
+  > span {
   color: #ff8978;
 }
 
@@ -470,15 +499,15 @@ header #header-bar .fa {
 }
 
 #article-reply-area
-#reply-real-area
-.reply
-> .reply-header
-> .reply-writer.logged,
+  #reply-real-area
+  .reply
+  > .reply-header
+  > .reply-writer.logged,
 #article-reply-area
-#reply-best-area
-.reply
-> .reply-header
-> .reply-writer.logged {
+  #reply-best-area
+  .reply
+  > .reply-header
+  > .reply-writer.logged {
   color: #ffd2c5;
 }
 

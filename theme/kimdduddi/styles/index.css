@@ -34,6 +34,17 @@ header {
   padding-bottom: 0px;
 }
 
+header .row > div:nth-child(1) > a {
+  background: url(https://upload.tgd.kr/20180911/717561690381d66be6c0704caa9863bb.png)
+    no-repeat;
+  display: block;
+  height: 50px;
+}
+
+header .row > div:nth-child(1) > a img {
+  display: none;
+}
+
 header #right-search-form #right-search-btn {
   color: #ffc019;
 }
@@ -70,7 +81,7 @@ header #header-bar #header-top-notice strong.notice-badge {
 }
 
 header #header-bar .fa {
-  color: #fab005;
+  color: #fff;
 }
 
 #main #main-menu {
@@ -190,7 +201,11 @@ header #header-bar .fa {
   border-top: 2px dashed #eee;
 }
 
-#main #main-content > div.frame div#article-content-wrapper div#article-content {
+#main
+  #main-content
+  > div.frame
+  div#article-content-wrapper
+  div#article-content {
   padding: 20px 10px;
 }
 
@@ -239,17 +254,36 @@ header #header-bar .fa {
   border-bottom-left-radius: 0px;
 }
 
-#main #main-content > div.frame div#article-reply-area #reply-real-area .reply div.reply-header {
+#main
+  #main-content
+  > div.frame
+  div#article-reply-area
+  #reply-real-area
+  .reply
+  div.reply-header {
   background: none;
   padding: 10px 20px 5px 10px;
   border-bottom: 2px dashed #f5f5f5;
 }
 
-#main #main-content > div.frame div#article-reply-area #reply-real-area .reply div.reply-header .reply-writer.logged {
+#main
+  #main-content
+  > div.frame
+  div#article-reply-area
+  #reply-real-area
+  .reply
+  div.reply-header
+  .reply-writer.logged {
   color: #fab005;
 }
 
-#main #main-content > div.frame div#article-reply-area #reply-real-area .reply div.reply-content {
+#main
+  #main-content
+  > div.frame
+  div#article-reply-area
+  #reply-real-area
+  .reply
+  div.reply-content {
   background: none;
   padding: 10px 10px 20px 15px;
 }
@@ -383,7 +417,10 @@ div#article-list form.input-group .input-group-btn button:hover {
   transition: 0.3s ease 0s;
 }
 
-div#article-list form.input-group .input-group-btn button.btn.square.btn-default.dropdown-toggle {
+div#article-list
+  form.input-group
+  .input-group-btn
+  button.btn.square.btn-default.dropdown-toggle {
   padding-left: 15px;
   padding-right: 10px;
   border-top-left-radius: 17px;
@@ -392,7 +429,10 @@ div#article-list form.input-group .input-group-btn button.btn.square.btn-default
   border-bottom-right-radius: 0px;
 }
 
-div#article-list form.input-group .input-group-btn button.btn.square.btn-default {
+div#article-list
+  form.input-group
+  .input-group-btn
+  button.btn.square.btn-default {
   padding-left: 10px;
   padding-right: 15px;
   border-top-right-radius: 17px;
@@ -469,11 +509,11 @@ header #header-bar > .row,
 }
 
 #article-list
-> .article-list-row
-> .item
-> .list-title
-> .list-writer.logged
-> span {
+  > .article-list-row
+  > .item
+  > .list-title
+  > .list-writer.logged
+  > span {
   color: #fab005;
 }
 
@@ -504,15 +544,15 @@ header #header-bar > .row,
 }
 
 #article-reply-area
-#reply-real-area
-.reply
-> .reply-header
-> .reply-writer.logged,
+  #reply-real-area
+  .reply
+  > .reply-header
+  > .reply-writer.logged,
 #article-reply-area
-#reply-best-area
-.reply
-> .reply-header
-> .reply-writer.logged {
+  #reply-best-area
+  .reply
+  > .reply-header
+  > .reply-writer.logged {
   color: #ffc019;
 }
 
