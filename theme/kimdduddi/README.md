@@ -14,9 +14,11 @@ SASS 로 제작되었습니다.
 
 #### CSS 버젼(minify) [파일보기](./styles/index.min.css)
 
+> Custom CSS 에 적용해야 할 파일입니다.
+
 #### 원본보기(SCSS) [파일보기](./styles/index.scss)
 
----
+> 주석설명이 달린 수정할 수 있는 SCSS 원본 파일입니다.
 
 ### 미리보기
 
@@ -27,4 +29,15 @@ SASS 로 제작되었습니다.
 
 ## 모바일
 
-준비중 입니다.
+#### CSS 버젼(minify) [파일보기](./styles/mobile.min.css)
+
+> Custom CSS 에 적용해야 할 파일입니다.
+
+#### 원본보기(SCSS) [파일보기](./styles/mobile.scss)
+
+> 주석설명이 달린 수정할 수 있는 SCSS 원본 파일입니다.
+
+### 미리보기
+
+![예제1](./image/mex01.png)
+![예제2](./image/mex02.png)
