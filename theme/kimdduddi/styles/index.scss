@@ -36,8 +36,7 @@ header #header-bar>.row,
 header {
   padding-bottom: 0px;
   .row > div:nth-child(1) > a {
-    background: url(https://upload.tgd.kr/20180911/717561690381d66be6c0704caa9863bb.png)
-      no-repeat;
+    background: url(https://upload.tgd.kr/20180911/717561690381d66be6c0704caa9863bb.png) no-repeat;
     display: block;
     height: 50px;
     img {
@@ -146,6 +145,9 @@ header {
         }
         > a:hover {
           color: $color-main-deep;
+        }
+        a.badge-live {
+          font-size: 12px;
         }
       }
       // 아랫줄
@@ -270,6 +272,15 @@ div#article-list {
   border-radius: $radius;
   border: $default-border $color-main-border;
   padding: 0px;
+
+  #article-option-area {
+    top: 3px;
+    right: 3px;
+    > #article-option-area-toggle-btn {
+      border-radius: 18px;
+      background: rgba(245, 245, 245, 0.9);
+    }
+  }
   // 게시글 목록 상단의 카테고리
   div#article-list-category {
     border: 1px solid $color-main;
@@ -294,7 +305,7 @@ div#article-list {
     border: none;
     border-bottom: 1px solid $color-main-border;
     background: #fdfdfd;
-    transition: 0.1s ease 0s;
+    transition: $trans-time;
     padding: 2px 0px 2px 0px;
     // 머지이거
     div.item {
@@ -323,7 +334,7 @@ div#article-list {
   }
   // 게시글 목록에 마우스를 올렸을때
   div.article-list-row:hover {
-    background: rgba(253, 237, 179, 0.33);
+    background: rgba(253, 237, 179, 0.25);
   }
   // 게시글 목록의 공지사항
   div.article-list-row.notice {
@@ -333,10 +344,19 @@ div#article-list {
     background: rgba(247, 75, 72, 0.05);
     // border:1px solid rgba(247,75,72,.5);
   }
+
   // 게시글 목록의 공지사항에 마우스를 올렸을때
   div.article-list-row.notice:hover {
     background: rgba(247, 75, 72, 0.1);
   }
+  div.article-list-row.hot {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  // 게시글 목록의 공지사항에 마우스를 올렸을때
+  div.article-list-row.hot:hover {
+    background: rgba(253, 237, 179, 0.5);
+  }
+
   // 게시글 목록 하단매뉴
   #article-list-menu {
     // 인기글 버튼입니다.
@@ -461,12 +481,7 @@ header #header-bar > .row,
 #article-list > .article-list-row > .item > .list-title > small.comment-count {
   color: $color-main-deep;
 }
-#article-list
-  > .article-list-row
-  > .item
-  > .list-title
-  > .list-writer.logged
-  > span {
+#article-list > .article-list-row > .item > .list-title > .list-writer.logged > span {
   color: $color-main-deep;
 }
 .pagination > .active > a,
@@ -491,16 +506,8 @@ header #header-bar > .row,
 #article-content-wrapper > .header {
   border-top: 2px solid $color-main;
 }
-#article-reply-area
-  #reply-real-area
-  .reply
-  > .reply-header
-  > .reply-writer.logged,
-#article-reply-area
-  #reply-best-area
-  .reply
-  > .reply-header
-  > .reply-writer.logged {
+#article-reply-area #reply-real-area .reply > .reply-header > .reply-writer.logged,
+#article-reply-area #reply-best-area .reply > .reply-header > .reply-writer.logged {
   color: $color-main;
 }
 #article-info > h2 {

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   background: #f1f3f5;
   transition: 0.3s ease 1s;
@@ -34,8 +35,7 @@ header {
 }
 
 header .row > div:nth-child(1) > a {
-  background: url(https://upload.tgd.kr/20180911/717561690381d66be6c0704caa9863bb.png)
-    no-repeat;
+  background: url(https://upload.tgd.kr/20180911/717561690381d66be6c0704caa9863bb.png) no-repeat;
   display: block;
   height: 50px;
 }
@@ -156,6 +156,10 @@ header #header-bar .fa {
   color: #fab005;
 }
 
+#main #main-content > div.frame div#board-info > h1 a.badge-live {
+  font-size: 12px;
+}
+
 #main #main-content > div.frame div#board-info > #board-info-bottom {
   margin-top: 6px;
   width: calc(100% - 110px);
@@ -200,11 +204,7 @@ header #header-bar .fa {
   border-top: 2px dashed #eee;
 }
 
-#main
-  #main-content
-  > div.frame
-  div#article-content-wrapper
-  div#article-content {
+#main #main-content > div.frame div#article-content-wrapper div#article-content {
   padding: 20px 10px;
 }
 
@@ -253,36 +253,17 @@ header #header-bar .fa {
   border-bottom-left-radius: 0px;
 }
 
-#main
-  #main-content
-  > div.frame
-  div#article-reply-area
-  #reply-real-area
-  .reply
-  div.reply-header {
+#main #main-content > div.frame div#article-reply-area #reply-real-area .reply div.reply-header {
   background: none;
   padding: 10px 20px 5px 10px;
   border-bottom: 2px dashed #f5f5f5;
 }
 
-#main
-  #main-content
-  > div.frame
-  div#article-reply-area
-  #reply-real-area
-  .reply
-  div.reply-header
-  .reply-writer.logged {
+#main #main-content > div.frame div#article-reply-area #reply-real-area .reply div.reply-header .reply-writer.logged {
   color: #fab005;
 }
 
-#main
-  #main-content
-  > div.frame
-  div#article-reply-area
-  #reply-real-area
-  .reply
-  div.reply-content {
+#main #main-content > div.frame div#article-reply-area #reply-real-area .reply div.reply-content {
   background: none;
   padding: 10px 10px 20px 15px;
 }
@@ -303,6 +284,16 @@ div#article-list {
   border-radius: 8px;
   border: 1px solid #dee2e6;
   padding: 0px;
+}
+
+div#article-list #article-option-area {
+  top: 3px;
+  right: 3px;
+}
+
+div#article-list #article-option-area > #article-option-area-toggle-btn {
+  border-radius: 18px;
+  background: rgba(245, 245, 245, 0.9);
 }
 
 div#article-list div#article-list-category {
@@ -330,7 +321,7 @@ div#article-list div.article-list-row {
   border: none;
   border-bottom: 1px solid #dee2e6;
   background: #fdfdfd;
-  transition: 0.1s ease 0s;
+  transition: 0.2s ease 0s;
   padding: 2px 0px 2px 0px;
 }
 
@@ -359,7 +350,7 @@ div#article-list div.article-list-row > div.item > .list-time {
 }
 
 div#article-list div.article-list-row:hover {
-  background: rgba(253, 237, 179, 0.33);
+  background: rgba(253, 237, 179, 0.25);
 }
 
 div#article-list div.article-list-row.notice {
@@ -369,6 +360,14 @@ div#article-list div.article-list-row.notice {
 
 div#article-list div.article-list-row.notice:hover {
   background: rgba(247, 75, 72, 0.1);
+}
+
+div#article-list div.article-list-row.hot {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+div#article-list div.article-list-row.hot:hover {
+  background: rgba(253, 237, 179, 0.5);
 }
 
 div#article-list #article-list-menu > .btn.best {
@@ -416,10 +415,7 @@ div#article-list form.input-group .input-group-btn button:hover {
   transition: 0.3s ease 0s;
 }
 
-div#article-list
-  form.input-group
-  .input-group-btn
-  button.btn.square.btn-default.dropdown-toggle {
+div#article-list form.input-group .input-group-btn button.btn.square.btn-default.dropdown-toggle {
   padding-left: 15px;
   padding-right: 10px;
   border-top-left-radius: 17px;
@@ -428,10 +424,7 @@ div#article-list
   border-bottom-right-radius: 0px;
 }
 
-div#article-list
-  form.input-group
-  .input-group-btn
-  button.btn.square.btn-default {
+div#article-list form.input-group .input-group-btn button.btn.square.btn-default {
   padding-left: 10px;
   padding-right: 15px;
   border-top-right-radius: 17px;
@@ -507,12 +500,7 @@ header #header-bar > .row,
   color: #fab005;
 }
 
-#article-list
-  > .article-list-row
-  > .item
-  > .list-title
-  > .list-writer.logged
-  > span {
+#article-list > .article-list-row > .item > .list-title > .list-writer.logged > span {
   color: #fab005;
 }
 
@@ -542,16 +530,8 @@ header #header-bar > .row,
   border-top: 2px solid #ffc019;
 }
 
-#article-reply-area
-  #reply-real-area
-  .reply
-  > .reply-header
-  > .reply-writer.logged,
-#article-reply-area
-  #reply-best-area
-  .reply
-  > .reply-header
-  > .reply-writer.logged {
+#article-reply-area #reply-real-area .reply > .reply-header > .reply-writer.logged,
+#article-reply-area #reply-best-area .reply > .reply-header > .reply-writer.logged {
   color: #ffc019;
 }
 

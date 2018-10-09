@@ -1,3 +1,5 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 html {
   background: #e9ecef;
 }
@@ -37,8 +39,7 @@ html body header #header-area #header-search-btn {
 }
 
 html body header #header-area > a > h1 {
-  background: url("https://upload.tgd.kr/20180911/717561690381d66be6c0704caa9863bb.png")
-    no-repeat;
+  background: url("https://upload.tgd.kr/20180911/717561690381d66be6c0704caa9863bb.png") no-repeat;
   background-size: 110px 38px;
   height: 40px;
 }
@@ -59,12 +60,7 @@ html body header form.input-group .input-group-btn button:hover {
   transition: 0.3s ease 0s;
 }
 
-html
-  body
-  header
-  form.input-group
-  .input-group-btn
-  button.btn.square.btn-default.dropdown-toggle {
+html body header form.input-group .input-group-btn button.btn.square.btn-default.dropdown-toggle {
   padding-left: 15px;
   padding-right: 10px;
   border-top-left-radius: 17px;
@@ -73,12 +69,7 @@ html
   border-bottom-right-radius: 0px;
 }
 
-html
-  body
-  header
-  form.input-group
-  .input-group-btn
-  button.btn.square.btn-default {
+html body header form.input-group .input-group-btn button.btn.square.btn-default {
   padding-left: 10px;
   padding-right: 15px;
   border-top-right-radius: 17px;
@@ -157,7 +148,7 @@ html body #article-content-wrapper {
   border-bottom-left-radius: 8px;
   padding-bottom: 5px;
   border: 1px solid #dee2e6;
-  border-top: 0px;
+  border-top: none;
   background: #fff;
 }
 
@@ -166,7 +157,7 @@ html body #article-content-wrapper #article-content {
 }
 
 html body #article-content-wrapper > .header {
-  padding-top: 0px;
+  padding-top: none;
   background: none;
   border-top: none !important;
   border-bottom: 2px dashed #dee2e6;
@@ -212,13 +203,7 @@ html body #article-reply-area #reply-real-area .reply div.reply-header {
   border-bottom: 2px dashed #dee2e6;
 }
 
-html
-  body
-  #article-reply-area
-  #reply-real-area
-  .reply
-  div.reply-header
-  .reply-writer.logged {
+html body #article-reply-area #reply-real-area .reply div.reply-header .reply-writer.logged {
   color: #fab005;
 }
 
@@ -279,13 +264,7 @@ html body #article-list > .article-list-row > .item > a.list-title {
   border-bottom: none;
 }
 
-html
-  body
-  #article-list
-  > .article-list-row
-  > .item
-  > a.list-title
-  > .list-writer {
+html body #article-list > .article-list-row > .item > a.list-title > .list-writer {
   display: block;
 }
 
@@ -309,13 +288,7 @@ html body #article-list > .article-list-row.notice > .item {
   padding: 6px 0px;
 }
 
-html
-  body
-  #article-list
-  > .article-list-row.notice
-  > .item
-  > a.list-title
-  > .list-writer {
+html body #article-list > .article-list-row.notice > .item > a.list-title > .list-writer {
   display: none;
 }
 
@@ -365,12 +338,7 @@ html body #article-list form.input-group .input-group-btn button:hover {
   transition: 0.3s ease 0s;
 }
 
-html
-  body
-  #article-list
-  form.input-group
-  .input-group-btn
-  button.btn.square.btn-default.dropdown-toggle {
+html body #article-list form.input-group .input-group-btn button.btn.square.btn-default.dropdown-toggle {
   padding-left: 15px;
   padding-right: 10px;
   border-top-left-radius: 17px;
@@ -379,25 +347,18 @@ html
   border-bottom-right-radius: 0px;
 }
 
-html
-  body
-  #article-list
-  form.input-group
-  .input-group-btn
-  button.btn.square.btn-default {
+html body #article-list form.input-group .input-group-btn button.btn.square.btn-default {
   padding-left: 10px;
   padding-right: 15px;
   border-top-right-radius: 17px;
   border-bottom-right-radius: 17px;
 }
 
-html
-  body
-  #article-list
-  > .article-list-row
-  > .item
-  > a.list-title
-  > .list-writer.logged
-  > span {
+html body #article-list
+> .article-list-row
+> .item
+> a.list-title
+> .list-writer.logged
+> span {
   color: #fab005;
 }

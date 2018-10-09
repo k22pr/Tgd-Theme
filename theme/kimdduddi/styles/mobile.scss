@@ -1,4 +1,6 @@
 @import "variable.scss";
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 html {
   background: $mobile-bg;
   body {
@@ -137,7 +139,7 @@ html {
       border-bottom-left-radius: $radius;
       padding-bottom: 5px;
       border: $default-border $color-main-border;
-      border-top: 0px;
+      border-top: none;
 
       background: #fff;
       #article-content {
@@ -145,7 +147,7 @@ html {
       }
     }
     #article-content-wrapper > .header {
-      padding-top: 0px;
+      padding-top: none;
       background: none;
       border-top: none !important;
       border-bottom: 2px dashed $color-main-border;
