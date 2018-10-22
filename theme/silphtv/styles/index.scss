@@ -23,10 +23,6 @@ button,
 a.btn {
   transition: $trans-time;
 }
-.btn-default {
-  background: $button-white-bg !important;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
 
 /* 전체 쉐도우 */
 /*
@@ -43,11 +39,11 @@ header #header-bar>.row,
 header {
   padding-bottom: 0px;
   .row > div:nth-child(1) > a {
-    //background: url(https://upload.tgd.kr/20180911/717561690381d66be6c0704caa9863bb.png) no-repeat;
     display: block;
+    width: 158px;
     height: 50px;
     img {
-      //display: none;
+      display: none;
     }
   }
   #right-search-form {
@@ -55,16 +51,16 @@ header {
     overflow: hidden;
     > input[type="text"] {
       float: left;
-      color: $color-main-deep;
+      color: #f5f5f5;
       border: none;
       //border-bottom: 2px solid $color-main-deep;
       padding-left: 15px;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.1);
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
     }
     > input[type="text"]::placeholder {
-      color: $color-main;
+      color: #666;
     }
     #right-search-btn {
       float: left;
@@ -83,20 +79,28 @@ header {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     margin: 0px;
     padding: 0px;
+    #header-menu-left {
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    #header-menu-right {
+      border-left: 1px solid rgba(255, 255, 255, 0.2);
+    }
     > .row {
+      padding: 6px 0px 0px 0px;
       border: $default-border $color-main-border;
+      border-top: 4px solid $color-main-deep;
       //border-bottom: 1px solid $color-main;
       //border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 
       //background: $header-bar;
-      background: -webkit-linear-gradient(top left, rgba(20, 23, 26, 0.5), rgba(40, 43, 46, 0.5));
+      background: -webkit-linear-gradient(top left, rgba(20, 23, 26, 0.7), rgba(40, 43, 46, 0.7));
     }
     a.dropdown-toggle {
       color: #fff;
     }
     #header-top-notice {
       a {
-        color: #f5f5f5;
+        color: #fff;
       }
       strong.notice-badge {
         background: $color-main-deep;
@@ -107,20 +111,39 @@ header {
     }
   }
 }
+#main .row {
+  background: $base-4;
+  padding-left: 10px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.08);
+  border-bottom-left-radius: $radius;
+}
 // 왼쪽의 매뉴 부분
 #main #main-menu {
   margin-top: 120px;
   .menu-wrapper {
     border: 0px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.033);
     > .header {
+      border-top-left-radius: 9px;
+      border-top-right-radius: 9px;
+      text-align: center;
+      > i {
+        position: absolute;
+        left: 20px;
+        top: 10px;
+      }
       a,
       a:hover {
-        color: #fff;
+        color: $white;
         background: none;
         border: none;
       }
       background: $button-bg;
       padding: 8px;
+    }
+    a:nth-last-child(1) {
+      border-bottom-left-radius: 9px;
+      border-bottom-right-radius: 9px;
     }
     // 매뉴의 마지막 1개의 왼쪽아래 끝을 둥글게
     /*
@@ -142,8 +165,8 @@ header {
     a {
       transition: 0.15s ease 0s;
       background: $menu-list;
-      color: #aaa;
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: #333 !important;
+      border: 1px solid rgba(0, 0, 0, 0.05);
       border-top: none;
       padding: 7px;
       em,
@@ -157,6 +180,7 @@ header {
     a.game:hover,
     a:hover {
       color: #fff;
+      background: $base-6;
     }
   }
 }
@@ -170,9 +194,12 @@ header {
   }
   #main-content {
     > div.frame {
-      background: none; // 게시글의 제목줄 // 메인 콘텐츠 상단의 프로필 이미지와 이름이 적혀있는 부분
+      background: none;
       border: none;
       margin-top: 120px;
+
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
       div#board-info {
         overflow: hidden;
         position: absolute;
@@ -180,8 +207,11 @@ header {
         width: 1100px;
         left: calc((100% - 1100px));
         height: 150px;
-        background: $base-8;
+        //background: $base-8;
+        background-size: 100%;
+        background-position: 0px;
         border-bottom: 3px solid $color-main;
+
         //border-image: $button-bg 3 100%;
 
         > img,
@@ -191,19 +221,19 @@ header {
         }
         // 프로필 이미지
         > img#board-info-profile-img {
-          z-index: 0;
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          z-index: 3;
           position: absolute;
-          border-radius: 0px;
-          top: -450px;
-          left: 15%;
-          width: 70%;
-          filter: blur(20px);
+          top: 56px;
+          left: 30%;
         }
         // 윗줄
         > h1 {
           z-index: 2;
           position: absolute;
-          color: #f5f5f5;
+          color: $white;
           width: 100%;
           height: calc(110px - 3px);
           padding: 60px 0px 0px 0px;
@@ -235,7 +265,7 @@ header {
             position: absolute;
             top: 88px;
             right: 10px;
-            color: #f5f5f5;
+            color: #fff;
           }
           span#viewers-area::after {
             font-size: 12px;
@@ -268,42 +298,15 @@ header {
           }
         }
       }
-      div#article-info {
-        border-top-left-radius: $radius;
-        border-top-right-radius: $radius;
-        border: $default-border $color-main-border;
-        border-bottom: none;
-        background: $base-color;
-        color: #fff;
-        padding: 20px 10px 10px 10px;
-        margin-top: 10px;
-        > h2 > span.category {
-          color: #aaa !important;
-          border-right: none;
-        }
-        // 작성자의 프로필 이미지
-        .article-profile-img {
-          top: 20px;
-          left: 20px;
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-        }
-        // 게시글 제목
-        // (이미지가 왼쪽에 오기 때문에 padding-left를 이미지크기+여백 값만큼 줘야합니다.)
-        h2,
-        #article-info-writer {
-          padding-left: 80px;
-        }
-      }
       // 게시글의 댓글 부분
       div#article-reply-area {
         border: $default-border $color-main-border;
         border-top-left-radius: $radius;
         border-top-right-radius: $radius;
+        border-bottom-left-radius: $radius;
         margin-top: 10px;
         padding-bottom: 10px;
-        background: $base-color;
+        background: $base-7;
         div.header {
           background: $line-bg;
           border-top-left-radius: $radius;
@@ -328,16 +331,18 @@ header {
           background: $base-color;
           padding: 10px 10px;
           .reply {
-            background: $base-6;
+            background: $base-8;
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 25px;
             border-bottom-left-radius: 0px;
             // 댓글 상단의 프로필 이미지와 작성자 닉네임 부분
             div.reply-header {
-              color: #ccc;
-              background: none;
+              color: #666;
+              background: $base-7;
               padding: 10px 20px 5px 10px;
-              border-bottom: 2px dashed $base-8;
+              border-bottom: 2px dashed $base-6;
+              border-top-right-radius: 25px;
+              border-top-left-radius: 25px;
               .reply-writer.logged {
                 color: $color-main-deep;
               }
@@ -351,7 +356,7 @@ header {
           }
         }
       }
-      // 댓글 부분 아래오는 광고
+      /**
       div#article-reply-area ~ div {
         background: none;
         border-bottom-left-radius: 20px;
@@ -361,6 +366,7 @@ header {
           border-top: 0px !important;
         }
       }
+      **/
     }
   }
 }
@@ -368,7 +374,10 @@ header {
 div#article-list {
   border-radius: $radius;
   border: $default-border $color-main-border;
+  border-bottom-right-radius: 0px;
+  background: $base-6;
   padding: 0px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.033);
   .article-list-row:nth-of-type(2) {
     border-top: 0px;
   }
@@ -379,7 +388,7 @@ div#article-list {
     > #article-option-area-toggle-btn {
       border-radius: 18px;
       background: $base-7;
-      color: #f5f5f5;
+      color: $white;
     }
   }
   // 게시글 목록 상단의 카테고리
@@ -402,13 +411,13 @@ div#article-list {
   }
   // 게시글 목록의 게시글
   div.article-list-row {
-    width: calc(100%);
-    border: none;
+    width: calc(100% - 16px);
+    margin: 2px 8px 0px 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
     //border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    background: $base-color;
+    background: $base-7;
     transition: $trans-time;
     padding: 2px 0px 2px 0px;
-    margin-top: 4px;
     border-radius: 15px;
     // 머지이거
     div.item {
@@ -416,13 +425,7 @@ div#article-list {
         border: none;
         span {
           //background: $color-main-deep;
-          background-color: $base-8 !important;
-        }
-        // 추천이 0개인 추천수
-        div.v0 > span {
-          //background: #999 !important;
-          background-color: $base-8;
-          color: #999;
+          background-color: $color-main-deep !important;
         }
         strong {
           color: #bd3b3b !important;
@@ -431,13 +434,18 @@ div#article-list {
           color: $color-main;
         }
       }
+      div.list-header.v0 > span {
+        //background: #999 !important;
+        background-color: $base-4 !important;
+        color: #fff;
+      }
       div.list-title {
         > div.list-category {
           width: 80px;
           border-left: 1px solid rgba(255, 255, 255, 0.1);
           border-right: 1px solid rgba(255, 255, 255, 0.1);
           span.category {
-            color: #aaa !important;
+            color: #666 !important;
           }
         }
       }
@@ -446,14 +454,14 @@ div#article-list {
     > div.item > .list-title {
       border-bottom: 0px;
       > a:visited {
-        color: #aaa !important;
+        color: #333 !important;
       }
       a {
-        color: #f5f5f5 !important;
+        color: $white !important;
         transition: 0.2s ease 0s;
       }
       a:hover {
-        color: $color-main !important;
+        color: $color-main-deep !important;
       }
       small.comment-count {
         color: $color-main;
@@ -479,6 +487,10 @@ div#article-list {
     //background: rgba(247, 75, 72, 0.1);
     background: $base-6;
     // border:1px solid rgba(247,75,72,.5);
+
+    > div.item > .list-title a:hover {
+      color: #bd4141 !important;
+    }
   }
 
   // 게시글 목록의 공지사항에 마우스를 올렸을때

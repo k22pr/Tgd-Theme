@@ -4,28 +4,76 @@ span.a-badge i.fa.fa-picture-o {
   color: $color-main-deep;
 }
 
+.btn-default {
+  background: $button-white-bg !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .btn-outline-danger {
   background: $button-red-bg !important;
+  color: #fff;
+}
+#main #main-menu .menu-wrapper > .header,
+div#article-list-category > a {
+  text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.33), -1px 0px 1px rgba(0, 0, 0, 0.33), 0px 1px 1px rgba(0, 0, 0, 0.33), 0px -1px 1px rgba(0, 0, 0, 0.33);
+}
+
+div#article-info {
+  text-shadow: 1px 0px 1px rgba(255, 255, 255, 0.33), -1px 0px 1px rgba(255, 255, 255, 0.33), 0px 1px 1px rgba(255, 255, 255, 0.33), 0px -1px 1px rgba(255, 255, 255, 0.33);
 }
 
 #main-content {
+  div#article-info {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    border: $default-border $color-main-border;
+    border-bottom: none;
+
+    background: -webkit-linear-gradient(66deg, $base-color, $base-7);
+    background-size: 150% 150%;
+    animation: BackgroundOver 20s ease infinite;
+
+    color: $color-main-deep;
+    padding: 20px 10px 10px 10px;
+    margin-top: 10px;
+    > h2 > span.category {
+      color: #333 !important;
+      border-right: none;
+    }
+    // 작성자의 프로필 이미지
+    .article-profile-img {
+      top: 20px;
+      left: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    // 게시글 제목
+    // (이미지가 왼쪽에 오기 때문에 padding-left를 이미지크기+여백 값만큼 줘야합니다.)
+    h2,
+    #article-info-writer {
+      padding-left: 80px;
+      font-weight: bold;
+    }
+  }
   // 실제 게시글 콘텐츠가 시작되는 부분
   div#article-content-wrapper {
     padding: 0px;
     border: $default-border $color-main-border;
-    background: $base-6;
-    color: #eee;
+    background: $base-8;
+    color: #000;
     border-top: none;
     border-bottom-left-radius: $radius; // 게시글 상단의 작성시간등
     border-bottom-right-radius: $radius; // 게시글 상단의 작성시간등
     div.header {
-      background: $base-6;
+      background: $base-7;
       color: #999;
-      border-top: 2px dashed $base-8;
+      border-top: 2px dashed $base-color;
+      border-bottom: 1px solid $base-6;
     }
     // 게시글의 실제 내용
     div#article-content {
-      padding: 20px 10px;
+      padding: 20px;
       border: none;
     }
     div.vote-area {
@@ -51,29 +99,37 @@ span.a-badge i.fa.fa-picture-o {
     }
     // 게시글 하단의 버튼들
     div.footer {
-      background: $base-color;
+      background: $base-7;
       padding: 10px 15px;
-      border-top: 2px dashed $base-8;
+      border-top: 2px dashed $base-6;
       border-bottom-left-radius: $radius;
       border-bottom-right-radius: $radius;
     }
   }
 }
 
-#article-list-menu {
-  // 인기글 버튼입니다.
-  > .btn {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 8px 15px;
-  }
-  > .btn.best {
-    background: $button-like-bg !important;
-    color: #fff;
-  }
-  // 글 쓰기 버튼 입니다.
-  > .btn.write {
-    background: $button-bg;
-    color: #fff;
+#article-list {
+  #article-list-menu {
+    padding: 10px;
+    width: 90%;
+    margin: 10px auto 0px auto;
+    height: auto;
+    overflow: hidden;
+    // 인기글 버튼입니다.
+    > .btn {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 8px 15px;
+      border-radius: 8px;
+    }
+    > .btn.best {
+      background: $button-like-bg !important;
+      color: #fff;
+    }
+    // 글 쓰기 버튼 입니다.
+    > .btn.write {
+      background: $button-bg;
+      color: #fff;
+    }
   }
 }
 // 게시글 목록 하단매뉴
@@ -81,30 +137,11 @@ span.a-badge i.fa.fa-picture-o {
 .pagination-area {
   // 중앙의 페이지 넘버 부분입니다.
   .pagination > li > a {
-    color: #eee;
+    color: #999;
     background: $base-7;
     border-radius: 50%;
     margin-left: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  // 페이지 넘버중 현재 페이지입니다.
-  .pagination > li > a:hover {
-    transition: 0.3s ease 0s;
-    background: $base-8;
-  }
-  // 현재 페이지
-  .pagination > li.active > a {
-    color: #fff;
-    font-weight: bold;
-    background: $button-bg;
-  }
-  // 중앙의 페이지 넘버 부분입니다.
-  .pagination > li > a {
-    color: #eee;
-    background: $base-7;
-    border-radius: 50%;
-    margin-left: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
   }
   // 페이지 넘버중 현재 페이지입니다.
   .pagination > li > a:hover {
@@ -120,8 +157,9 @@ span.a-badge i.fa.fa-picture-o {
 }
 
 footer {
-  background-color: $body-background;
-  color: #ccc;
+  margin-top: 4em;
+  background-color: $base-color;
+  color: #000;
   a {
     transform: 0.2s ease 0s;
   }
@@ -136,7 +174,7 @@ a:hover {
 
 // 하단의 검색박스 부분 입니다.
 form.input-group {
-  margin-bottom: 10px;
+  padding-bottom: 20px;
   // 중앙의 검색어 입력부분
   input[type="text"] {
     padding: 6px;
@@ -172,6 +210,7 @@ form.input-group {
 }
 
 //rp게시글
+/*
 #comment-write-form-area {
   padding: 0px;
   .fr-box.fr-basic .fr-wrapper {
@@ -193,3 +232,4 @@ form.input-group {
     color: #fff;
   }
 }
+*/
